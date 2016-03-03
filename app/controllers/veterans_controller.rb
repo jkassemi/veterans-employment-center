@@ -123,7 +123,6 @@ class VeteransController < ApplicationController
         Skill.find(id) unless id.blank?
       end
     end
-    @veteran.update_attributes(applied_for_alp_date: Time.now) unless veteran_params[:accelerated_learning_program].blank?
     if user_signed_in?
       @veteran.update_attributes(user_id: current_user.id) if current_user.veteran.nil?
     else
@@ -150,7 +149,6 @@ class VeteransController < ApplicationController
     if @veteran.user_id.nil?
       @veteran.update_attributes(user_id: current_user.id) if user_signed_in? && current_user.veteran.nil?
     end
-    @veteran.update_attributes(applied_for_alp_date: Time.now) unless veteran_params[:accelerated_learning_program].blank?
     if !veteran_params["locations_attributes"].blank?
       @veteran.update_location_attributes(veteran_params["locations_attributes"])
     end
