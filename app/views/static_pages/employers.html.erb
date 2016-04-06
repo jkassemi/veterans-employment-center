@@ -20,24 +20,19 @@
   <div class="section one">
 
 <% unless user_signed_in? && current_user.is_employer? %>
-    <div class="row">
-		<div class="small-12 columns">
-		  <div class="small-12 medium-8 columns">
-        <h3>Find the best candidates for your open positions.</h3>
-        <p>
-          Search our verified Veteran profiles. Post a job. And be sure to make a Veteran hiring commitment &mdash; put your company front and center as one that stands with America’s Veterans and their families.
-        </p>
-		  </div>
-		  <div class="small-12 medium-4 columns feature">
-        <h5>Employers:<br />Log in to create/manage your account.</h5>
-        <div class="actions">
-          <%= link_to "Sign in with LinkedIn", user_omniauth_authorize_path(:linkedin), class: "button social linkedin expand" %> <%= link_to "Sign in with Google", user_omniauth_authorize_path(:google_oauth2), class: "button social googleplus expand" %>
-	       </div>
-		  </div>
-
-
-  	</div><!-- end columns -->
-	 </div><!-- end row 2 -->
+  <div class="row">
+    <div class="small-12 medium-8 columns">
+      <div class="primary">
+        <p>The Veterans Employment Center™ (VEC) provides support for your company during your search for Veteran candidates and after you have hired a Veteran or military family member.</p>
+      </div>
+    </div>
+    <div class="small-12 medium-4 columns feature">
+      <h5>Employers:<br />Log in to create/manage your account.</h5>
+      <div class="actions">
+        <%= link_to "Sign in with LinkedIn", user_omniauth_authorize_path(:linkedin), class: "button social linkedin expand" %> <%= link_to "Sign in with Google", user_omniauth_authorize_path(:google_oauth2), class: "button social googleplus expand" %>
+      </div>
+    </div>
+  </div>
  <% end %>
 
 	<% if user_signed_in? && current_user.is_employer? %>
@@ -88,11 +83,20 @@
           </ul>
         </div>
       </div>
+
+    <hr>
+    <div class="small-12 medium-9 columns">
+      <h5>Learn More:</h5>
+        <ul>
+          <li>Read research showing that hiring Veterans is good business, particularly when it comes to entrepreneurship, resiliency, mission strategy, and team-related goals and actions: <a href='http://vets.syr.edu/wp-content/uploads/2014/07/TheBusinessCase7.14.pdf'>“The Business Case for Hiring a Veteran: Beyond the Clichés”</a>.</li>
+          <li>Receive incentives for participating in programs. The <a href='https://www.doleta.gov/business/incentives/opptax/eligible.cfm'>Work Opportunity Tax Credit (WOTC)</a> ranges from $1,200 to $9,600. Additional programs include the <a href='http://www.benefits.va.gov/vocrehab/'>Vocational Rehabilitation and Employment program</a>, and <a href='https://employment.vets.gov/employment/employers/apprenticeship/'>Apprenticeship programs</a>.</li>
+          <li>Find out how your company’s needs may coincide with the <a href='http://www.va.gov/health/cwt/'>Compensated Work Therapy program</a>.</li>
+          <li>Connect with a <a href='https://employment.vets.gov/employment/job-seekers/veci/'>Veterans Economic Community Initiative (VECI)</a> liaison at available cities to learn more about Veterans and their needs.</li>
+        </ul>
     </div>
 
-
   </div>
-
+</div>
   <!-- Navigation -->
 
   <div class="navigation">
